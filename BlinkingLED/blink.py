@@ -1,13 +1,15 @@
 import RPi.GPIO as GPIO
 import time
 
-pins = [7]
+pins = [7, 11]
 
 GPIO.setmode(GPIO.BOARD)
-GPIO.setup(pins[0], GPIO.OUT)
+GPIO.setup(pins, GPIO.OUT)
 
 while True:
     time.sleep(1)
-    GPIO.output(pins[0], 1)
+    for pin in pins:
+        GPIO.output(pin, 1)
     time.sleep(1)
-    GPIO.output(pins[0], 0)
+    for pin in pins:
+        GPIO.output(pin, 0)
