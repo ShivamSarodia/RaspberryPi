@@ -7,9 +7,7 @@ GPIO.setmode(GPIO.BOARD)
 GPIO.setup(pins, GPIO.OUT)
 
 while True:
-    time.sleep(1)
-    for pin in pins:
-        GPIO.output(pin, 1)
-    time.sleep(1)
-    for pin in pins:
-        GPIO.output(pin, 0)
+    time.sleep(0.5)
+    GPIO.output(pins, 1)
+    time.sleep(0.5)
+    GPIO.output(pins, 0)
